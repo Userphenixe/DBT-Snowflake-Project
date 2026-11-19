@@ -2,4 +2,5 @@
 target/
 dbt_packages/
 logs/
-profiles.yml
+set-env.ps1
+_prod_profiles/.user.yml
