@@ -1,6 +1,14 @@
 {{
     config(
-        materialized = 'table'
+        materialized = 'incremental',
+        incremental_strategy = 'microbatch',
+        event_time = 'review_date',
+        begin = '2009-06-20',
+        batch_size = 'day',
+        lookback = 2,
+        full_refresh = false,
+        tags = ['mart'],
+        grants = {"select": ["transform"]}
     )
 }}
 
